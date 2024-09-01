@@ -26,7 +26,7 @@ func Base(title string) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\" data-theme=\"dark\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"description\" content=\"The Kafejo Books\"><meta name=\"htmx-config\" content=\"{&#34;selfRequestsOnly&#34;:&#34;true&#34;}\"><meta name=\"google\" content=\"notranslate\"><link rel=\"stylesheet\" href=\"/static/css/normalize.css\"><link rel=\"stylesheet\" href=\"/static/css/sakura-light.css\" media=\"screen\"><link rel=\"stylesheet\" href=\"/static/css/sakura-dark.css\" media=\"screen and (prefers-color-scheme: dark)\"><script src=\"/static/js/css-scope-inline.js\"></script><title>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\" data-theme=\"dark\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"description\" content=\"The Kafejo Books\"><meta name=\"htmx-config\" content=\"{&#34;selfRequestsOnly&#34;:&#34;true&#34;}\"><meta name=\"google\" content=\"notranslate\"><link rel=\"stylesheet\" href=\"/static/css/normalize.css\"><link rel=\"stylesheet\" href=\"/static/css/sakura-light.css\" media=\"screen and (prefers-color-scheme: light)\"><link rel=\"stylesheet\" href=\"/static/css/sakura-dark.css\" media=\"screen and (prefers-color-scheme: dark)\"><script src=\"/static/js/css-scope-inline.js\"></script><title>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

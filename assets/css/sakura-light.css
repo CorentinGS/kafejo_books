@@ -6,7 +6,9 @@
 /* Body */
 html {
   font-size: 62.5%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -14,8 +16,8 @@ body {
   line-height: 1.618;
   max-width: 38em;
   margin: auto;
-  color: rgba(0, 0, 0, 0.85);
-  background-color: #ffffff;
+  color: #343a40;
+  background-color: #f8f9fa;
   padding: 13px;
 }
 
@@ -31,7 +33,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
   font-weight: 700;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
@@ -87,7 +89,7 @@ a:visited {
 }
 a:hover {
   color: #DA4453;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.85);
+  border-bottom: 2px solid #343a40;
 }
 
 ul {
@@ -109,7 +111,7 @@ blockquote {
   padding-right: 0.8em;
   border-left: 5px solid #3b22ea;
   margin-bottom: 2.5rem;
-  background-color: #f7f7f7;
+  background-color: #f1f3f5;
 }
 
 blockquote p {
@@ -125,7 +127,7 @@ img, video {
 
 /* Pre and Code */
 pre {
-  background-color: #f7f7f7;
+  background-color: #f1f3f5;
   display: block;
   padding: 1em;
   overflow-x: auto;
@@ -137,7 +139,7 @@ pre {
 code, kbd, samp {
   font-size: 0.9em;
   padding: 0 0.5em;
-  background-color: #f7f7f7;
+  background-color: #f1f3f5;
   white-space: pre-wrap;
 }
 
@@ -158,12 +160,12 @@ table {
 
 td, th {
   padding: 0.5em;
-  border-bottom: 1px solid #f7f7f7;
+  border-bottom: 1px solid #f1f3f5;
 }
 
 /* Buttons, forms and input */
 input, textarea {
-  border: 1px solid rgba(0, 0, 0, 0.85);
+  border: 1px solid #343a40;
 }
 input:focus, textarea:focus {
   border: 1px solid #3b22ea;
@@ -180,7 +182,7 @@ textarea {
   text-decoration: none;
   white-space: nowrap;
   background-color: #3b22ea;
-  color: #ffffff;
+  color: #f8f9fa;
   border-radius: 1px;
   border: 1px solid #3b22ea;
   cursor: pointer;
@@ -192,7 +194,7 @@ textarea {
 }
 .button:hover, button:hover, input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover, input[type=file]::file-selector-button:hover {
   background-color: #DA4453;
-  color: #ffffff;
+  color: #f8f9fa;
   outline: 0;
 }
 .button:focus-visible, button:focus-visible, input[type=submit]:focus-visible, input[type=reset]:focus-visible, input[type=button]:focus-visible, input[type=file]::file-selector-button:focus-visible {
@@ -201,11 +203,11 @@ textarea {
 }
 
 textarea, select, input {
-  color: rgba(0, 0, 0, 0.85);
+  color: #343a40;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   margin-bottom: 10px;
-  background-color: #f7f7f7;
-  border: 1px solid #f7f7f7;
+  background-color: #f1f3f5;
+  border: 1px solid #f1f3f5;
   border-radius: 4px;
   box-shadow: none;
   box-sizing: border-box;
