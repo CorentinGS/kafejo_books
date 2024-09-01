@@ -1,0 +1,8 @@
+app:
+  name: kafejo-books
+  version: 0.0.1
+http:
+  port: 1815
+  host: localhost
+logger:
+  level: debug

@@ -1,0 +1,31 @@
+package page
+
+import "github.com/corentings/kafejo-books/app/views/layout"
+
+templ Hero() {
+	<section>
+		<h1>The Kafejo Books</h1>
+		<p>A website with a lot of great resources to improve at coding and read for free my books.</p>
+		<span>Made by <a href="https://corentings.dev">CorentinGS</a></span>
+	</section>
+}
+
+templ Index() {
+	<style>
+	me {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	</style>
+	@Hero()
+}
+
+templ IndexPage(title string,
+	cmp templ.Component) {
+	@layout.Base(title) {
+		@cmp
+	}
+}
