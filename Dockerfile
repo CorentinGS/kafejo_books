@@ -18,7 +18,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -ldflags="-s -w -X 'main.Version=${VERSION}'" -tags prod -o /app/kafejo-books ./cmd/main.go \
+RUN go build -ldflags="-s -w -X 'main.Version=${VERSION}'" -tags prod -o /app/kafejo-books ./cmd/http/main.go \
     && upx /app/kafejo-books \
     && wget -q -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.5/dumb-init_1.2.5_x86_64 \
     && chmod +x /usr/local/bin/dumb-init \
@@ -28,7 +28,7 @@ RUN go build -ldflags="-s -w -X 'main.Version=${VERSION}'" -tags prod -o /app/ka
 
 FROM gcr.io/distroless/static:nonroot AS production
 
-LABEL org.opencontainers.image.source=https://github.com/corentings/kafejo-books
+LABEL org.opencontainers.image.source=https://github.com/corentings/kafejo_books
 LABEL description="Production stage for kafejo-books."
 
 ENV TZ Europe/Paris
