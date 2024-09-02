@@ -30,9 +30,9 @@ func (p *BookHandler) HandleGetIndex() http.HandlerFunc {
 
 func (p *BookHandler) HandleGetBooks() http.HandlerFunc {
 	books := []string{
-		"How to develop in go ?",
+		"How to develop in Go ?",
 		"Go for dummies",
-		"Coding in go",
+		"Coding in Go",
 		"Go for the win",
 	}
 	return func(w http.ResponseWriter, r *http.Request) {
