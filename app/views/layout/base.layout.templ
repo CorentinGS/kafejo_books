@@ -1,10 +1,10 @@
 package layout 
 
-
 templ Base(title string) {
 	<!DOCTYPE html>
-	<html lang="en" data-theme="dark">
+	<html lang="en">
 		<head>
+			<title>{ title }</title>
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta
@@ -13,15 +13,13 @@ templ Base(title string) {
 			/>
 			<meta name="htmx-config" content='{"selfRequestsOnly":"true"}'/>
 			<meta name="google" content="notranslate"/>
-			<link rel="stylesheet" href="/static/css/normalize.css"/>
-			<script src="/static/js/sakura.js"></script>
-			<script src="/static/js/css-scope-inline.js"></script>
-			<title>{ title }</title>
+			<link rel="stylesheet" href="/static/css/normalize.min.css"/>
+			<script src="/static/js/sakura.min.js"></script>
+			<script src="/static/js/css-scope-inline.min.js"></script>
 			<script src="/static/js/htmx.min.js" defer></script>
-			<script src="/static/js/hyperscript.min.js"  defer></script>
-			<script src="/static/js/preload.js" defer></script> 
-
-			<link rel="stylesheet" href="/static/css/sk-chase.css"/>
+			<script src="/static/js/hyperscript.min.js" defer></script>
+			<script src="/static/js/preload.min.js" defer></script>
+			<link rel="stylesheet" href="/static/css/sk-chase.min.css"/>
 			// Favicon
 			<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon"/>
 		</head>

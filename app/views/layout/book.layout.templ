@@ -1,6 +1,5 @@
 package layout 
 
-
 templ Book(title string) {
 	<!DOCTYPE html>
 	<html lang="en" data-theme="dark">
@@ -13,16 +12,14 @@ templ Book(title string) {
 			/>
 			<meta name="htmx-config" content='{"selfRequestsOnly":"true"}'/>
 			<meta name="google" content="notranslate"/>
-			<link rel="stylesheet" href="/static/css/normalize.css"/>
-			<script src="/static/js/css-scope-inline.js"></script>
+			<link rel="stylesheet" href="/static/css/normalize.min.css"/>
+			<script src="/static/js/css-scope-inline.min.js"></script>
 			<link rel="stylesheet" href="/static/css/tufte.min.css"/>
-
 			<title>{ title }</title>
 			<script src="/static/js/htmx.min.js" defer></script>
-			<script src="/static/js/hyperscript.min.js"  defer></script>
-			<script src="/static/js/preload.js" defer></script> 
-
-			<link rel="stylesheet" href="/static/css/sk-chase.css"/>
+			<script src="/static/js/hyperscript.min.js" defer></script>
+			<script src="/static/js/preload.min.js" defer></script>
+			<link rel="stylesheet" href="/static/css/sk-chase.min.css"/>
 			// Favicon
 			<link rel="icon" href="/static/img/favicon.ico" type="image/x-icon"/>
 		</head>

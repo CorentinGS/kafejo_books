@@ -4,7 +4,7 @@
 // for more details
 htmx.defineExtension('preload', {
 
-  onEvent: function (name, event) {
+  onEvent: function(name, event) {
     // Only take actions on "htmx:afterProcessNode"
     if (name !== 'htmx:afterProcessNode') {
       return
@@ -13,17 +13,17 @@ htmx.defineExtension('preload', {
     // SOME HELPER FUNCTIONS WE'LL NEED ALONG THE WAY
 
     // attr gets the closest non-empty value from the attribute.
-    const attr = function (node, property) {
+    var attr = function(node, property) {
       if (node == undefined) { return undefined }
       return node.getAttribute(property) || node.getAttribute('data-' + property) || attr(node.parentElement, property)
     }
 
     // load handles the actual HTTP fetch, and uses htmx.ajax in cases where we're
     // preloading an htmx resource (this sends the same HTTP headers as a regular htmx request)
-    const load = function (node) {
+    var load = function(node) {
       // Called after a successful AJAX request, to mark the
       // content as loaded (and prevent additional AJAX calls.)
-      const done = function (html) {
+      var done = function(html) {
         if (!node.preloadAlways) {
           node.preloadState = 'DONE'
         }
@@ -33,7 +33,7 @@ htmx.defineExtension('preload', {
         }
       }
 
-      return function () {
+      return function() {
         // If this value has already been loaded, then do not try again.
         if (node.preloadState !== 'READY') {
           return
@@ -43,11 +43,11 @@ htmx.defineExtension('preload', {
         // so that headers match other htmx requests, then set
         // node.preloadState = TRUE so that requests are not duplicated
         // in the future
-        const hxGet = node.getAttribute('hx-get') || node.getAttribute('data-hx-get')
+        var hxGet = node.getAttribute('hx-get') || node.getAttribute('data-hx-get')
         if (hxGet) {
           htmx.ajax('GET', hxGet, {
             source: node,
-            handler: function (elt, info) {
+            handler: function(elt, info) {
               done(info.xhr.responseText)
             }
           })
@@ -58,9 +58,9 @@ htmx.defineExtension('preload', {
         // node.preloadState = TRUE so that requests are not duplicated
         // in the future.
         if (node.getAttribute('href')) {
-          const r = new XMLHttpRequest()
+          var r = new XMLHttpRequest()
           r.open('GET', node.getAttribute('href'))
-          r.onload = function () { done(r.responseText) }
+          r.onload = function() { done(r.responseText) }
           r.send()
         }
       }
@@ -68,7 +68,7 @@ htmx.defineExtension('preload', {
 
     // This function processes a specific node and sets up event handlers.
     // We'll search for nodes and use it below.
-    const init = function (node) {
+    var init = function(node) {
       // If this node DOES NOT include a "GET" transaction, then there's nothing to do here.
       if (node.getAttribute('href') + node.getAttribute('hx-get') + node.getAttribute('data-hx-get') == '') {
         return
@@ -80,7 +80,7 @@ htmx.defineExtension('preload', {
       }
 
       // Get event name from config.
-      let on = attr(node, 'preload') || 'mousedown'
+      var on = attr(node, 'preload') || 'mousedown'
       const always = on.indexOf('always') !== -1
       if (always) {
         on = on.replace('always', '').trim()
@@ -89,7 +89,7 @@ htmx.defineExtension('preload', {
       // FALL THROUGH to here means we need to add an EventListener
 
       // Apply the listener to the node
-      node.addEventListener(on, function (evt) {
+      node.addEventListener(on, function(evt) {
         if (node.preloadState === 'PAUSE') { // Only add one event listener
           node.preloadState = 'READY' // Required for the `load` function to trigger
 
@@ -109,7 +109,7 @@ htmx.defineExtension('preload', {
           node.addEventListener('touchstart', load(node))
 
           // WHhen the mouse leaves, immediately disable the preload
-          node.addEventListener('mouseout', function (evt) {
+          node.addEventListener('mouseout', function(evt) {
             if ((evt.target === node) && (node.preloadState === 'READY')) {
               node.preloadState = 'PAUSE'
             }
@@ -117,7 +117,7 @@ htmx.defineExtension('preload', {
           break
 
         case 'mousedown':
-					 // Mirror `touchstart` events (fires immediately)
+          // Mirror `touchstart` events (fires immediately)
           node.addEventListener('touchstart', load(node))
           break
       }
@@ -129,7 +129,8 @@ htmx.defineExtension('preload', {
     }
 
     // Search for all child nodes that have a "preload" attribute
-    event.target.querySelectorAll('[preload]').forEach(function (node) {
+    const parent = event.target || event.detail.elt;
+    parent.querySelectorAll("[preload]").forEach(function(node) {
       // Initialize the node with the "preload" attribute
       init(node)
 

@@ -35,10 +35,14 @@ tasks:
       - g
     generates:
       - app/views/**/*.go
-      - assets/static/**/*.css
+      - assets/css/*.css
+      - assets/js/*.js
     sources:
       - app/views/**/*.templ
-      - assets/static/**/*.css
+      - assets/css/*.css
+      - assets/js/*.js
     cmds:
       - templ generate
       - go generate -tags dev ./...
+      - ./minify.sh assets/css
+      - ./minify.sh assets/js
