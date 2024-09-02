@@ -1,3 +1,13 @@
+## 0.1.0-b3 (2024-09-03)
+
+### 🔍️ SEO
+
+- Add robots.txt and sitemap.xml routes
+
+### 🔐🚧📈✏️ 💩👽️🍻💬🥚🌱🚩🥅🩺 Others
+
+- Add defer script for nero.corentings.dev
+
 ## 0.1.0-b2 (2024-09-02)
 
 ### ✨ Features
