@@ -33,3 +33,6 @@ tmp/
 *.gob
 megalinter*
 *-lock*
+
+.task/
+.sass-cache/
