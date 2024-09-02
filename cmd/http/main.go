@@ -16,7 +16,7 @@ func main() {
 
 	chiRouter := chi.NewRouter()
 
-	server := app.NewServer(chiRouter, "local")
+	server := app.NewServer(chiRouter, cfg)
 
 	app.RegisterRoutes(server)
 
