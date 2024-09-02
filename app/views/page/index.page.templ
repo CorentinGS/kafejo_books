@@ -4,23 +4,41 @@ import "github.com/corentings/kafejo-books/app/views/layout"
 
 templ Hero() {
 	<section>
-		<h1>The Kafejo Books</h1>
-		<p>A website with a lot of great resources to improve at coding and read for free my books.</p>
+		<h1>The Kafejo Library</h1>
+		<p>A website with a lot of great resources to improve at coding and read for free books.</p>
 		<span>Made by <a href="https://corentings.dev">CorentinGS</a></span>
 	</section>
 }
 
 templ Index() {
-	<style>
-	me {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-	}
-	</style>
 	@Hero()
+	// Lazy load the books
+	<div hx-get="/books" hx-trigger="load delay:2s">
+	<style>
+		me {
+			min-height: 50vh;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+		@SkChaseLoader()
+	</div>
+	// Load the book
+}
+
+templ SkChaseLoader() {
+	<section>
+		<div class="sk-chase">
+			<div class="sk-chase-dot"></div>
+			<div class="sk-chase-dot"></div>
+			<div class="sk-chase-dot"></div>
+			<div class="sk-chase-dot"></div>
+			<div class="sk-chase-dot"></div>
+			<div class="sk-chase-dot"></div>
+		</div>
+	</section>
 }
 
 templ IndexPage(title string,

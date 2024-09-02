@@ -14,6 +14,7 @@ import (
 // RegisterRoutes registers the API routes for the repertoire service.
 func RegisterRoutes(s *Server) {
 	pageHandler := handlers.NewPageHandler()
+	bookHandler := handlers.NewBookHandler()
 	r := s.Router
 
 	r.Use(middleware.Logger) // <--<< Logger should come before Recoverer
@@ -42,6 +43,10 @@ func RegisterRoutes(s *Server) {
 	})
 
 	r.Get("/", pageHandler.HandleGetIndex())
+
+	r.Get("/books", bookHandler.HandleGetBooks())
+	r.Get("/book", bookHandler.HandleGetIndex())
+	r.Get("/book/LoremIpsum/{page}", bookHandler.HandleGetLoremIpsum())
 }
 
 func StaticAssetsCacheControlMiddleware(next http.Handler) http.Handler {
