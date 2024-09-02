@@ -26,20 +26,20 @@ func Book(title string) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\" data-theme=\"dark\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"description\" content=\"The Kafejo Books\"><meta name=\"htmx-config\" content=\"{&#34;selfRequestsOnly&#34;:&#34;true&#34;}\"><meta name=\"google\" content=\"notranslate\"><link rel=\"stylesheet\" href=\"/static/css/normalize.css\"><script src=\"/static/js/css-scope-inline.js\"></script><link rel=\"stylesheet\" href=\"/static/css/tufte.min.css\"><title>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\" data-theme=\"dark\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"description\" content=\"The Kafejo Books\"><meta name=\"htmx-config\" content=\"{&#34;selfRequestsOnly&#34;:&#34;true&#34;}\"><meta name=\"google\" content=\"notranslate\"><link rel=\"stylesheet\" href=\"/static/css/normalize.min.css\"><script src=\"/static/js/css-scope-inline.min.js\"></script><link rel=\"stylesheet\" href=\"/static/css/tufte.min.css\"><title>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 string
 		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(title)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/layout/book.layout.templ`, Line: 20, Col: 17}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/layout/book.layout.templ`, Line: 18, Col: 17}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</title><script src=\"/static/js/htmx.min.js\" defer></script><script src=\"/static/js/hyperscript.min.js\" defer></script><script src=\"/static/js/preload.js\" defer></script><link rel=\"stylesheet\" href=\"/static/css/sk-chase.css\"><link rel=\"icon\" href=\"/static/img/favicon.ico\" type=\"image/x-icon\"></head><body class=\"sample-transition\" hx-ext=\"preload\" hx-boost=\"true\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</title><script src=\"/static/js/htmx.min.js\" defer></script><script src=\"/static/js/hyperscript.min.js\" defer></script><script src=\"/static/js/preload.min.js\" defer></script><link rel=\"stylesheet\" href=\"/static/css/sk-chase.min.css\"><link rel=\"icon\" href=\"/static/img/favicon.ico\" type=\"image/x-icon\"></head><body class=\"sample-transition\" hx-ext=\"preload\" hx-boost=\"true\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

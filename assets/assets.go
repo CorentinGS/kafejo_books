@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-//go:embed img/* js/* css/*
+//go:embed img/* js/*.min* css/*.min* css/et-book/*
 var assetsFS embed.FS
 
 func FileSystem() http.FileSystem {

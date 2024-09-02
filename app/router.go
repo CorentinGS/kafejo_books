@@ -17,7 +17,10 @@ func RegisterRoutes(s *Server) {
 	bookHandler := handlers.NewBookHandler()
 	r := s.Router
 
-	r.Use(middleware.Logger) // <--<< Logger should come before Recoverer
+	if s.Config.Level == "debug" {
+		r.Use(middleware.Logger) // <--<< Logger should come before Recoverer
+	}
+
 	r.Use(middleware.Heartbeat("/health"))
 
 	r.Use(cors.Handler(cors.Options{

@@ -4,18 +4,20 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/corentings/kafejo-books/config"
 	"github.com/go-chi/chi/v5"
 )
 
 type Server struct {
 	Router *chi.Mux
+	Config *config.Config
 	Stage  string
 }
 
-func NewServer(router *chi.Mux, stage string) *Server {
+func NewServer(router *chi.Mux, config *config.Config) *Server {
 	return &Server{
 		Router: router,
-		Stage:  stage,
+		Config: config,
 	}
 }
 
