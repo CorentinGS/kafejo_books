@@ -10,8 +10,8 @@ import (
 
 type Server struct {
 	Router *chi.Mux
-	Stage  string
 	Config *config.Config
+	Stage  string
 }
 
 func NewServer(router *chi.Mux, config *config.Config) *Server {
