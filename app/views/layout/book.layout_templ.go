@@ -39,7 +39,7 @@ func Book(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</title><script src=\"/static/js/htmx.min.js\" defer></script><script src=\"/static/js/hyperscript.min.js\" defer></script><script src=\"/static/js/preload.min.js\" defer></script><link rel=\"stylesheet\" href=\"/static/css/sk-chase.min.css\"><link rel=\"icon\" href=\"/static/img/favicon.ico\" type=\"image/x-icon\"></head><body class=\"sample-transition\" hx-ext=\"preload\" hx-boost=\"true\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</title><script src=\"/static/js/htmx.min.js\" defer></script><script src=\"/static/js/hyperscript.min.js\" defer></script><script src=\"/static/js/preload.min.js\" defer></script><link rel=\"stylesheet\" href=\"/static/css/sk-chase.min.css\"><link rel=\"icon\" href=\"/static/img/favicon.ico\" type=\"image/x-icon\"><script defer src=\"https://nero.corentings.dev/script.js\" data-domains=\"kafejo.corentings.dev\" data-website-id=\"d35cf846-5a89-4611-82e4-070c4f5bf61d\"></script></head><body class=\"sample-transition\" hx-ext=\"preload\" hx-boost=\"true\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

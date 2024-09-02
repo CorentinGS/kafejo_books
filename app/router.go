@@ -1,6 +1,7 @@
 package app
 
 import (
+	"log/slog"
 	"net/http"
 
 	"github.com/corentings/kafejo-books/app/handlers"
@@ -50,6 +51,21 @@ func RegisterRoutes(s *Server) {
 	r.Get("/books", bookHandler.HandleGetBooks())
 	r.Get("/book", bookHandler.HandleGetIndex())
 	r.Get("/book/LoremIpsum/{page}", bookHandler.HandleGetLoremIpsum())
+
+	r.Get("/robots.txt", func(w http.ResponseWriter, _ *http.Request) {
+		_, err := w.Write(assets.RobotsTxt())
+		if err != nil {
+			slog.Warn("Failed to write robots.txt", slog.String("error", err.Error()))
+		}
+	})
+
+	r.Get("/sitemap.xml", func(w http.ResponseWriter, _ *http.Request) {
+		w.Header().Set("Content-Type", "application/xml")
+		_, err := w.Write(assets.SitemapXML())
+		if err != nil {
+			slog.Warn("Failed to write sitemap.xml", slog.String("error", err.Error()))
+		}
+	})
 }
 
 func StaticAssetsCacheControlMiddleware(next http.Handler) http.Handler {
