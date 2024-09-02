@@ -1,3 +1,9 @@
+## 0.1.0-b1 (2024-09-02)
+
+### ✨ Features
+
+- Add docker publishing workflow
+
 ## 0.1.0-b0 (2024-09-02)
 
 ### ✨ Features
