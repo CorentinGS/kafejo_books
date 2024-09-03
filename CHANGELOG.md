@@ -1,3 +1,9 @@
+## 0.1.0-b4 (2024-09-03)
+
+### ✨ Features
+
+- Add Content-Security-Policy header with additional script source
+
 ## 0.1.0-b3 (2024-09-03)
 
 ### 🔍️ SEO
