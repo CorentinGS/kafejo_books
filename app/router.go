@@ -89,7 +89,7 @@ func StaticPageCacheControlMiddleware(next http.Handler) http.Handler {
 func CSPMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// Set Content-Security-Policy header
-		cspHeader := "default-src 'self'; connect-src 'self' ; script-src 'self'; style-src 'self' 'unsafe-inline'"
+		cspHeader := "default-src 'self'; connect-src 'self' ; script-src 'self' *.corentings.dev ; style-src 'self' 'unsafe-inline'"
 
 		w.Header().Set("Content-Security-Policy", cspHeader)
 
