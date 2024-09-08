@@ -26,7 +26,7 @@ func BooksList(books []string) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<hr><section>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section><style> \n        me {\n            height: 100vh;\n            padding: 20px;\n        }\n        </style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -38,7 +38,7 @@ func BooksList(books []string) templ.Component {
 			var templ_7745c5c3_Var2 string
 			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(book)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/components/books.templ`, Line: 8, Col: 26}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/views/components/books.templ`, Line: 13, Col: 14}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 			if templ_7745c5c3_Err != nil {

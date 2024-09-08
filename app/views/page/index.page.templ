@@ -4,6 +4,18 @@ import "github.com/corentings/kafejo-books/app/views/layout"
 
 templ Hero() {
 	<section>
+		<style>
+	me {
+		padding: auto;
+		margin: auto;
+  		height: 100vh;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	</style>
 		<h1>The Kafejo Library</h1>
 		<p>A website with a lot of great resources to improve at coding and read for free books.</p>
 		<span>Made by <a href="https://corentings.dev">CorentinGS</a></span>
@@ -13,7 +25,7 @@ templ Hero() {
 templ Index() {
 	@Hero()
 	// Lazy load the books
-	<div hx-get="/books" hx-trigger="load delay:2s">
+	<div hx-get="/books" hx-trigger="load delay:1s">
 		<style>
 		me {
 			min-height: 50vh;
@@ -25,6 +37,17 @@ templ Index() {
 	</style>
 		@SkChaseLoader()
 	</div>
+	<style>
+	me section {
+		height: 100vh;
+    	padding: 20px;
+    	border-bottom: 1px solid #ccc;
+	}
+	</style>
+	<section id="section1" class="full-height">Section 1 Content</section>
+    <section id="section2" class="full-height">Section 2 Content</section>
+    <section id="section3" class="full-height">Section 3 Content</section>
+    <section id="section4" class="full-height">Section 4 Content</section>
 	// Load the book
 }
 

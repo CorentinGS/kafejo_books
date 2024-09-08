@@ -28,7 +28,7 @@ func Hero() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section><h1>The Kafejo Library</h1><p>A website with a lot of great resources to improve at coding and read for free books.</p><span>Made by <a href=\"https://corentings.dev\">CorentinGS</a></span></section>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section><style>\n\tme {\n\t\tpadding: auto;\n\t\tmargin: auto;\n  \t\theight: 100vh;\n\t\ttext-align: center;\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t}\n\t</style><h1>The Kafejo Library</h1><p>A website with a lot of great resources to improve at coding and read for free books.</p><span>Made by <a href=\"https://corentings.dev\">CorentinGS</a></span></section>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -58,7 +58,7 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div hx-get=\"/books\" hx-trigger=\"load delay:2s\"><style>\n\t\tme {\n\t\t\tmin-height: 50vh;\n\t\t\tmargin: 0 auto;\n\t\t\tdisplay: flex;\n\t\t\tjustify-content: center;\n\t\t\talign-items: center;\n\t\t}\n\t</style>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div hx-get=\"/books\" hx-trigger=\"load delay:1s\"><style>\n\t\tme {\n\t\t\tmin-height: 50vh;\n\t\t\tmargin: 0 auto;\n\t\t\tdisplay: flex;\n\t\t\tjustify-content: center;\n\t\t\talign-items: center;\n\t\t}\n\t</style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -66,7 +66,7 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><style>\n\tme section {\n\t\theight: 100vh;\n    \tpadding: 20px;\n    \tborder-bottom: 1px solid #ccc;\n\t}\n\t</style><section id=\"section1\" class=\"full-height\">Section 1 Content</section><section id=\"section2\" class=\"full-height\">Section 2 Content</section><section id=\"section3\" class=\"full-height\">Section 3 Content</section><section id=\"section4\" class=\"full-height\">Section 4 Content</section>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

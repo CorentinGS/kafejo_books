@@ -17,8 +17,8 @@ body {
   line-height: 1.618;
   max-width: 38em;
   margin: auto;
-  color: #f8f9fa;
-  background-color: #212529;
+  color: #ddd;
+  background-color: #151515;
   padding: 13px;
 }
 
@@ -90,7 +90,7 @@ a:visited {
 }
 a:hover {
   color: #c9c9c9;
-  border-bottom: 2px solid #f8f9fa;
+  border-bottom: 2px solid #ddd;
 }
 
 ul {
@@ -166,7 +166,7 @@ td, th {
 
 /* Buttons, forms and input */
 input, textarea {
-  border: 1px solid #f8f9fa;
+  border: 1px solid #ddd;
 }
 input:focus, textarea:focus {
   border: 1px solid #ffffff;
@@ -183,7 +183,7 @@ textarea {
   text-decoration: none;
   white-space: nowrap;
   background-color: #ffffff;
-  color: #212529;
+  color: #151515;
   border-radius: 1px;
   border: 1px solid #ffffff;
   cursor: pointer;
@@ -195,7 +195,7 @@ textarea {
 }
 .button:hover, button:hover, input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover, input[type=file]::file-selector-button:hover {
   background-color: #c9c9c9;
-  color: #212529;
+  color: #151515;
   outline: 0;
 }
 .button:focus-visible, button:focus-visible, input[type=submit]:focus-visible, input[type=reset]:focus-visible, input[type=button]:focus-visible, input[type=file]::file-selector-button:focus-visible {
@@ -204,7 +204,7 @@ textarea {
 }
 
 textarea, select, input {
-  color: #f8f9fa;
+  color: #ddd;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   margin-bottom: 10px;
   background-color: #343a40;
