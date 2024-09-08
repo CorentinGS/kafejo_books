@@ -1,3 +1,17 @@
+## 0.1.0-b6 (2024-09-08)
+
+### ✨ Features
+
+- **books**: Add route for individual books in the router
+
+### refactor
+
+- Remove unnecessary code in book handler
+
+### 🎨🏗️ Style & Architecture
+
+- Refactor CSS and SCSS styles
+
 ## 0.1.0-b5 (2024-09-03)
 
 ## 0.1.0-b4 (2024-09-03)
