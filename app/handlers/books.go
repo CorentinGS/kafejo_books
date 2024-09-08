@@ -29,11 +29,9 @@ func (p *BookHandler) HandleGetIndex() http.HandlerFunc {
 }
 
 func (p *BookHandler) HandleGetBooks() http.HandlerFunc {
-	books := []string{
-		"How to develop in Go ?",
-		"Go for dummies",
-		"Coding in Go",
-		"Go for the win",
+	books := map[string]string{
+		"1": "Welcome to Kafejo Books",
+		"2": "Corentin GS's Manual",
 	}
 	return func(w http.ResponseWriter, r *http.Request) {
 		bookList := components.BooksList(books)
@@ -64,4 +62,30 @@ func (p *BookHandler) HandleGetLoremIpsum() http.HandlerFunc {
 			slog.ErrorContext(r.Context(), "error rendering lorem ipsum page", slog.String("error", err.Error()))
 		}
 	}
+}
+
+func (p *BookHandler) HandleGetBook() http.HandlerFunc {
+	books := map[string]templ.Component{
+		"1": page.BookIndex(),
+		"2": page.Manual(),
+	}
+
+	return func(w http.ResponseWriter, r *http.Request) {
+		// Get the book from request url
+		book := chi.URLParam(r, "book")
+
+		// Check if the book exists
+		if _, ok := books[book]; !ok {
+			http.NotFound(w, r)
+			return
+		}
+
+		// Render the book
+		bookPage := page.BookPage(book, books[book])
+
+		if err := Render(w, r, http.StatusOK, bookPage); err != nil {
+			slog.ErrorContext(r.Context(), "error rendering book page", slog.String("error", err.Error()))
+		}
+	}
+
 }

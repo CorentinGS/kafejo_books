@@ -1,6 +1,8 @@
 package components
 
-templ BooksList(books []string) {
+import "fmt"
+
+templ BooksList(books map[string]string) {
 	<section>
 		<style> 
         me {
@@ -8,9 +10,9 @@ templ BooksList(books []string) {
             padding: 20px;
         }
         </style>
-		for _, book := range books {
+		for id, book := range books {
 			<article>
-				<h2>{ book }</h2>
+				<h2><a href={ templ.SafeURL(fmt.Sprintf("/books/%s", id ))}>{ book }</a></h2>
 				<p>Some description of the book</p>
 			</article>
 		}

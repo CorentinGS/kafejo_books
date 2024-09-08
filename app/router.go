@@ -52,6 +52,8 @@ func RegisterRoutes(s *Server) {
 	r.Get("/book", bookHandler.HandleGetIndex())
 	r.Get("/book/LoremIpsum/{page}", bookHandler.HandleGetLoremIpsum())
 
+	r.Get(("/books/{book}"), bookHandler.HandleGetBook())
+
 	r.Get("/robots.txt", func(w http.ResponseWriter, _ *http.Request) {
 		_, err := w.Write(assets.RobotsTxt())
 		if err != nil {
