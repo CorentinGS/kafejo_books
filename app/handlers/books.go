@@ -87,5 +87,4 @@ func (p *BookHandler) HandleGetBook() http.HandlerFunc {
 			slog.ErrorContext(r.Context(), "error rendering book page", slog.String("error", err.Error()))
 		}
 	}
-
 }
